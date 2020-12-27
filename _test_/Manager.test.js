@@ -1,7 +1,7 @@
 const { TestScheduler } = require("jest")
 const Manager = require("../lib/Manager")
 
-test('expect namager to be an instance', ()=> {
+test('expect manager to be an instance', ()=> {
     const manager = new Manager()
     expect(typeof(manager)).toBe('object');
 });
