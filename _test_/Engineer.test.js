@@ -14,8 +14,12 @@ test('expect a github username to be the same as constructor argument', ()=> {
 
 })
 
+test('expect get github to be a link of engineer', ()=> {
+    const engineer = new Engineer('joem', 3, 'joem@yahoo.com', 'reaganjoseph26')
+    expect(engineer.getGithub()).toBe(engineer.github)
+})
 
-// test('expect get role to be value of engineer', ()=> {
-//     const engineer = new Engineer('joem', 3, 'joem@yahoo.com', 'reaganjoseph26')
-//     expect(engineer.getRole()).tobe('Engineer)
-// })
+test('expect get role to be value of engineer', ()=> {
+    const engineer = new Engineer('joem', 3, 'joem@yahoo.com', 'reaganjoseph26')
+    expect(engineer.getRole()).toBe('Engineer')
+})
