@@ -32,6 +32,19 @@ const promptUser = () => {
                     return false
                 }
             }
+        },
+        {
+            type:'input',
+            name: 'employeeEmail',
+            message: 'Please provide the email of of your employee (Required).',
+            validate: nameInput => {
+                if(nameInput) {
+                    return true
+                } else {
+                    console.log('Please provide the email of your employee')
+                    return false
+                }
+            }
         }
        
         // {
@@ -53,7 +66,7 @@ function init() {
         const employeeType = userAnswers.employeeType
         if(employeeType === 'Manager') {
 
-            const newManager = new Manager(userAnswers.employeeName, 1, 'test@yahoo', 24)
+            const newManager = new Manager(userAnswers.employeeName, 1, userAnswers.employeeEmail, 24)
             generateHTML(newManager)
             
         }

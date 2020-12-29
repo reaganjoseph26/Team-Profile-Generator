@@ -1,15 +1,16 @@
 const fs = require('fs');
 // const employee = require('../lib/Employee')
 
-function renderEmployee(employee) {
+function renderEmployee(employeeData) {
     let employeeContent
-    console.log(employee)
-    if (employee === 'Manager') {
+
+    console.log(employeeData)
+    if (employeeData.getRole() === 'Manager') {
       employeeContent = 
       `<div class="employee-card">
-        <h3>${employee}</h3>
-        <p>John Smith</p>
-        <p>JohnSmith@yahoo.com</p>
+        <h3>${employeeData.getRole()}</h3>
+        <p>${employeeData.name}</p>
+        <p>${employeeData.getEmail()}</p>
       </div>` 
     } else {}
 
@@ -20,7 +21,7 @@ function generateHTML(data) {
     console.log(data)
     let content =  `
 
-   ${renderEmployee(data.employee)}
+   ${renderEmployee(data)}
 
 `;
 writeToFile('./dist/index.html', content);
