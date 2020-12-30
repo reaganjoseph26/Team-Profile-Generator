@@ -8,8 +8,8 @@ function renderEmployee(employeeData) {
     if (employeeData.getRole() === 'Manager') {
       employeeContent = 
       `<div class="employee-card">
-        <h3>${employeeData.getRole()}</h3>
-        <p>${employeeData.getName()}</p>
+        <h3>${employeeData.getName()}</h3>
+        <h4>${employeeData.getRole()}</h4>
         <p> ID: ${employeeData.getId()}</p>
         <p><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></p>
         <p> Office Number: ${employeeData.officeNumber}</p>
@@ -17,8 +17,8 @@ function renderEmployee(employeeData) {
     } else if  (employeeData.getRole() === 'Engineer') {
       employeeContent = 
       `<div class="employee-card">
-        <h3>${employeeData.getRole()}</h3>
-        <p>${employeeData.getName()}</p>
+        <h3>${employeeData.getName()}</h3>
+        <h4>${employeeData.getRole()}</h4>
         <p> ID: ${employeeData.getId()}</p>
         <p><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></p>
         <a href="https://github.com/${employeeData.getGithub()}">Gitub: ${employeeData.getGithub()}</a>
@@ -26,8 +26,8 @@ function renderEmployee(employeeData) {
     } else if (employeeData.getRole() === 'Intern') {
       employeeContent = 
       `<div class="employee-card">
-        <h3>${employeeData.getRole()}</h3>
-        <p>${employeeData.getName()}</p>
+        <h3>${employeeData.getName()}</h3>
+        <h4>${employeeData.getRole()}</h4>
         <p> ID: ${employeeData.getId()}</p>
         <p><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></p>
         <p>School: ${employeeData.getSchool()}</p>
