@@ -10,16 +10,27 @@ function renderEmployee(employeeData) {
       `<div class="employee-card">
         <h3>${employeeData.getRole()}</h3>
         <p>${employeeData.getName()}</p>
-        <p>${employeeData.getEmail()}</p>
-        <p>${employeeData.officeNumber}</p>
+        <p> ID: ${employeeData.getId()}</p>
+        <p><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></p>
+        <p> Office Number: ${employeeData.officeNumber}</p>
       </div>` 
     } else if  (employeeData.getRole() === 'Engineer') {
       employeeContent = 
       `<div class="employee-card">
         <h3>${employeeData.getRole()}</h3>
         <p>${employeeData.getName()}</p>
-        <p><a href="mailto:${employeeData.getEmail()}">email: ${employeeData.getEmail()}</a></p>
+        <p> ID: ${employeeData.getId()}</p>
+        <p><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></p>
         <a href="https://github.com/${employeeData.getGithub()}">Gitub: ${employeeData.getGithub()}</a>
+      </div>` 
+    } else if (employeeData.getRole() === 'Intern') {
+      employeeContent = 
+      `<div class="employee-card">
+        <h3>${employeeData.getRole()}</h3>
+        <p>${employeeData.getName()}</p>
+        <p> ID: ${employeeData.getId()}</p>
+        <p><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></p>
+        <p>School: ${employeeData.getSchool()}</p>
       </div>` 
     }
 

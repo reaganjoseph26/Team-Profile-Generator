@@ -1,6 +1,7 @@
 const inquirer = require('inquirer')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager')
+const Intern = require('./lib/Intern')
 const generateHTML = require('./utils/generate-html')
 
 // inquirer.registerPrompt("loop", require("inquirer-loop")(inquirer));
@@ -123,6 +124,19 @@ const promptUser = () => {
         },
         {
             type: 'input',
+            name: 'managerOfficeNumber',
+            message: 'Please enter the office number of the manager(Required).',
+            validate: nameInput => {
+                if(nameInput) {
+                    return true
+                } else {
+                    console.log('Please enter the office number of the manager')
+                    return false
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'engineerGithub',
             message: "Please provide the engineer's github username (Required).",
             validate: nameInput => {
@@ -146,9 +160,7 @@ const promptUser = () => {
                     return false
                 }
             }
-        }
-        
-        
+        },
        
          
     ])
@@ -166,11 +178,11 @@ function init() {
 
             const newEngineer = new Engineer(userAnswers.employeeName, 1, userAnswers.employeeEmail, userAnswers.engineerGithub )
             generateHTML(newEngineer)
+        } else if (employeeType === 'Intern') {
+            const newIntern = new Intern(userAnswers.employeeName, 1, userAnswers.employeeEmail, userAnswers.internSchool)
+            generateHTML(newIntern)
         }
-        //check for type of employee\
-        //function if employee is engineer, ask engineer. questions for engineer
-
-        // generateHTML(userAnswers)
+       
     })
 }
 
