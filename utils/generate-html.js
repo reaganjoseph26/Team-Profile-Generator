@@ -8,7 +8,7 @@ function renderEmployee(employeeData) {
     if (employeeData.getRole() === 'Manager') {
       employeeContent = 
       `<div class="card" style="width: 18rem;">
-        <div class="card-body>
+        <div class="card-body">
         <h3>${employeeData.getName()}</h3>
         <h4>${employeeData.getRole()}</h4>
        </div>
@@ -21,7 +21,7 @@ function renderEmployee(employeeData) {
     } else if  (employeeData.getRole() === 'Engineer') {
       employeeContent = 
       `<div class="card" style="width: 18rem;">
-        <div class="card-body>
+        <div class="card-body">
         <h3>${employeeData.getName()}</h3>
         <h4>${employeeData.getRole()}</h4>
         </div>
@@ -34,14 +34,14 @@ function renderEmployee(employeeData) {
     } else if (employeeData.getRole() === 'Intern') {
       employeeContent = 
       `<div class="card" style="width: 18rem;">
-      <div class="card-body>
+      <div class="card-body">
       <h3>${employeeData.getName()}</h3>
       <h4>${employeeData.getRole()}</h4>
       </div>
       <ul class="list-group list-group-flush">
       <li class="list-group-item">ID: ${employeeData.getId()}</li>
-      <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a}</li>
-      <li class="list-group-item">${employeeData.getSchool()}</li>
+      <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></li>
+      <li class="list-group-item">School: ${employeeData.getSchool()}</li>
       </ul>
       </div>` 
     }
@@ -50,25 +50,35 @@ function renderEmployee(employeeData) {
 };
 
 function generateHTML(data) {
-    console.log(data)
-    let content =  `
+  console.log(data)
+  let content =  `
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Team Profiles</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-      <link rel="stylesheet" href="../src/stylesheet.css">
-    </head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Team Profiles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/stylesheet.css">
+  </head>
 
-    <h1>My Team</h1>
-
-   ${renderEmployee(data)}
+  <h1>My Team</h1>
 
 `;
+
+  data.forEach(employee => {
+    console.log(employee.getName())
+
+    content += `
+    
+      ${renderEmployee(employee)}
+
+    
+    `
+  })
+
 writeToFile('./dist/index.html', content);
 }
 
