@@ -12,7 +12,15 @@ function renderEmployee(employeeData) {
         <p>${employeeData.name}</p>
         <p>${employeeData.getEmail()}</p>
       </div>` 
-    } else {}
+    } else if  (employeeData.getRole() === 'Engineer') {
+      employeeContent = 
+      `<div class="employee-card">
+        <h3>${employeeData.getRole()}</h3>
+        <p>${employeeData.name}</p>
+        <p>${employeeData.getEmail()}</p>
+        <p>${employeeData.getGithub()}</p>
+      </div>` 
+    }
 
     return employeeContent;
 };
