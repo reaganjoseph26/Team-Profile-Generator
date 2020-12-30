@@ -5,6 +5,11 @@ h1 {
     padding: 40px;
 }
 
+ul {
+    padding: 25px 15px;
+    background-color: aliceblue;
+}
+
 .card-body {
     background-color: blue;
     color: white;

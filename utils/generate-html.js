@@ -13,9 +13,9 @@ function renderEmployee(employeeData) {
         <h4><i class="fas fa-mug-hot"></i> ${employeeData.getRole()}</h4>
        </div>
        <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${employeeData.getId()}</li>
-        <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></li>
-        <li class="list-group-item">Office Number: ${employeeData.officeNumber}</li>
+        <li class="list-group-item border">ID: ${employeeData.getId()}</li>
+        <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
+        <li class="list-group-item border">Office Number: ${employeeData.officeNumber}</li>
        </ul>
       </div>` 
     } else if  (employeeData.getRole() === 'Engineer') {
@@ -26,9 +26,9 @@ function renderEmployee(employeeData) {
         <h4><i class="fas fa-glasses"></i> ${employeeData.getRole()}</h4>
         </div>
         <ul class="list-group list-group-flush">
-        <li class="list-group-item">ID: ${employeeData.getId()}</li>
-        <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></li>
-        <li class="list-group-item"><a href="https://github.com/${employeeData.getGithub()}">Gitub: ${employeeData.getGithub()}</a></li>
+        <li class="list-group-item border">ID: ${employeeData.getId()}</li>
+        <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
+        <li class="list-group-item border">Gitub: <a href="https://github.com/${employeeData.getGithub()}">${employeeData.getGithub()}</a></li>
         </ul>
       </div>` 
     } else if (employeeData.getRole() === 'Intern') {
@@ -39,9 +39,9 @@ function renderEmployee(employeeData) {
       <h4><i class="fas fa-user-graduate"></i> ${employeeData.getRole()}</h4>
       </div>
       <ul class="list-group list-group-flush">
-      <li class="list-group-item">ID: ${employeeData.getId()}</li>
-      <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></li>
-      <li class="list-group-item">School: ${employeeData.getSchool()}</li>
+      <li class="list-group-item border">ID: ${employeeData.getId()}</li>
+      <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
+      <li class="list-group-item border">School: ${employeeData.getSchool()}</li>
       </ul>
       </div>` 
     }
