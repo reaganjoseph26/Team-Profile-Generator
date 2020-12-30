@@ -29,12 +29,25 @@ const createManager = () => {
         {
             type: 'input',
             name: 'employeeName',
-            message: 'Please provide the name of your employee (Required).',
+            message: "Please provide the manager's name (Required).",
             validate: nameInput => {
                 if (nameInput) {
                     return true
                 } else {
-                    console.log('Please provide the name of your employee')
+                    console.log("Please provide the manager's name.")
+                    return false
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'employeeID',
+            message: "Please provide the manager's id (Required).",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true
+                } else {
+                    console.log("Please provide the manager's id.")
                     return false
                 }
             }
@@ -42,12 +55,12 @@ const createManager = () => {
         {
             type: 'input',
             name: 'employeeEmail',
-            message: 'Please provide the email of of your employee (Required).',
+            message: "Please provide the manager's email address (Required).",
             validate: nameInput => {
                 if (nameInput) {
                     return true
                 } else {
-                    console.log('Please provide the email address of your employee.')
+                    console.log("Please provide the manager's email address.")
                     return false
                 }
             }
@@ -67,7 +80,7 @@ const createManager = () => {
         },
 
     ]).then(answers => {
-        const newManager = new Manager(answers.employeeName, 1, answers.employeeEmail, answers.managerOfficeNumber)
+        const newManager = new Manager(answers.employeeName, answers.employeeID, answers.employeeEmail, answers.managerOfficeNumber)
         
         employeeArray.push(newManager)
         init()
@@ -81,12 +94,25 @@ const createEngineer = () => {
         {
             type: 'input',
             name: 'employeeName',
-            message: 'Please provide the name of your employee (Required).',
+            message: "Please provide the engineer's name (Required).",
             validate: nameInput => {
                 if (nameInput) {
                     return true
                 } else {
-                    console.log('Please provide the name of your employee')
+                    console.log("Please provide the engineer's name.")
+                    return false
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'employeeID',
+            message: "Please provide the engineer's id (Required).",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true
+                } else {
+                    console.log("Please provide the engineer's id")
                     return false
                 }
             }
@@ -94,12 +120,12 @@ const createEngineer = () => {
         {
             type: 'input',
             name: 'employeeEmail',
-            message: 'Please provide the email of of your employee (Required).',
+            message: "Please provide the engineer's email address (Required).",
             validate: nameInput => {
                 if (nameInput) {
                     return true
                 } else {
-                    console.log('Please provide the email address of your employee.')
+                    console.log("Please provide the engineer's email address")
                     return false
                 }
             }
@@ -112,7 +138,7 @@ const createEngineer = () => {
                 if (nameInput) {
                     return true
                 } else {
-                    console.log("Please provide the engineer's github account.")
+                    console.log("Please provide the engineer's github username.")
                     return false
                 }
             }
@@ -120,7 +146,7 @@ const createEngineer = () => {
 
     ]).then(answers => {
     
-        const newEngineer = new Engineer(answers.employeeName, 1, answers.employeeEmail, answers.engineerGithub)   
+        const newEngineer = new Engineer(answers.employeeName, answers.employeeID, answers.employeeEmail, answers.engineerGithub)   
         employeeArray.push(newEngineer)
         init();
     })
@@ -131,12 +157,25 @@ const createIntern = () => {
         {
             type: 'input',
             name: 'employeeName',
-            message: 'Please provide the name of your employee (Required).',
+            message: "Please provide the intern's name (Required).",
             validate: nameInput => {
                 if (nameInput) {
                     return true
                 } else {
-                    console.log('Please provide the name of your employee')
+                    console.log("Please provide the intern's name.")
+                    return false
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'employeeID',
+            message: "Please provide the intern's id (Required)",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true
+                } else {
+                    console.log("Please provide the intern's id")
                     return false
                 }
             }
@@ -144,12 +183,12 @@ const createIntern = () => {
         {
             type: 'input',
             name: 'employeeEmail',
-            message: 'Please provide the email of of your employee (Required).',
+            message: "Please provide the intern's email address (Required).",
             validate: nameInput => {
                 if (nameInput) {
                     return true
                 } else {
-                    console.log('Please provide the email address of your employee.')
+                    console.log("Please provide the intern's email address")
                     return false
                 }
             }
@@ -168,7 +207,7 @@ const createIntern = () => {
             }
         },
     ]).then(answers => {
-        const newIntern = new Intern(answers.employeeName, 1, answers.employeeEmail, answers.internSchool)
+        const newIntern = new Intern(answers.employeeName, answers.employeeID, answers.employeeEmail, answers.internSchool)
         employeeArray.push(newIntern)
         init()
     })
@@ -185,17 +224,17 @@ function init() {
                 // run Manager prompts func
                 break;
             case "Engineer":
-                // run Engineer prompts
+                // run Engineer prompts func
                 createEngineer();
                 break;
             case "Intern":
-                // run Intern prompts
+                // run Intern prompts func
                 createIntern()
                 break;
             default: // EXit
                 generateHTML(employeeArray)
-                console.log('finished!')
-            // start building the team
+                console.log('Congratulations, your team is complete!')
+            
         }
     })
 

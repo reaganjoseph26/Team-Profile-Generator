@@ -14,7 +14,7 @@ function renderEmployee(employeeData) {
        </div>
        <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${employeeData.getId()}</li>
-        <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a}</li>
+        <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></li>
         <li class="list-group-item">Office Number: ${employeeData.officeNumber}</li>
        </ul>
       </div>` 
@@ -27,7 +27,7 @@ function renderEmployee(employeeData) {
         </div>
         <ul class="list-group list-group-flush">
         <li class="list-group-item">ID: ${employeeData.getId()}</li>
-        <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a}</li>
+        <li class="list-group-item"><a href="mailto:${employeeData.getEmail()}">Email: ${employeeData.getEmail()}</a></li>
         <li class="list-group-item"><a href="https://github.com/${employeeData.getGithub()}">Gitub: ${employeeData.getGithub()}</a></li>
         </ul>
       </div>` 
