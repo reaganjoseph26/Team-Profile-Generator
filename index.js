@@ -122,19 +122,6 @@ const promptUser = () => {
             }
         },
         {
-            type:'number',
-            name: 'managerOfficeNumber',
-            message: 'Please provide the office number of your manager (Required).',
-            validate: nameInput => {
-                if(nameInput) {
-                    return true
-                } else {
-                    console.log('Please provide the office number for your manager.')
-                    return false
-                }
-            }
-        },
-        {
             type: 'input',
             name: 'engineerGithub',
             message: "Please provide the engineer's github account (Required).",
