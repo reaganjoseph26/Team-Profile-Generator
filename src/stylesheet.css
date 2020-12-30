@@ -4,3 +4,8 @@ h1 {
     color: white;
     padding: 40px;
 }
+
+.card-body {
+    background-color: blue;
+    color: white;
+}
