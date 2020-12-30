@@ -40,6 +40,7 @@ function renderEmployee(employeeData) {
 function generateHTML(data) {
     console.log(data)
     let content =  `
+    <h1>My Team</h1>
 
    ${renderEmployee(data)}
 
