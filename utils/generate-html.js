@@ -18,8 +18,8 @@ function renderEmployee(employeeData) {
       `<div class="employee-card">
         <h3>${employeeData.getRole()}</h3>
         <p>${employeeData.getName()}</p>
-        <p>${employeeData.getEmail()}</p>
-        <p>${employeeData.getGithub()}</p>
+        <p><a href="mailto:${employeeData.getEmail()}">email: ${employeeData.getEmail()}</a></p>
+        <a href="https://github.com/${employeeData.getGithub()}">Gitub: ${employeeData.getGithub()}</a>
       </div>` 
     }
 

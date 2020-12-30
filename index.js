@@ -102,7 +102,7 @@ const promptUser = () => {
                 if(nameInput) {
                     return true
                 } else {
-                    console.log('Please provide the email of your employee,')
+                    console.log('Please provide the email address of your employee.')
                     return false
                 }
             }
@@ -124,7 +124,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'engineerGithub',
-            message: "Please provide the engineer's github account (Required).",
+            message: "Please provide the engineer's github username (Required).",
             validate: nameInput => {
                 if (nameInput) {
                     return true
