@@ -9,14 +9,15 @@ function renderEmployee(employeeData) {
       employeeContent = 
       `<div class="employee-card">
         <h3>${employeeData.getRole()}</h3>
-        <p>${employeeData.name}</p>
+        <p>${employeeData.getName()}</p>
         <p>${employeeData.getEmail()}</p>
+        <p>${employeeData.officeNumber}</p>
       </div>` 
     } else if  (employeeData.getRole() === 'Engineer') {
       employeeContent = 
       `<div class="employee-card">
         <h3>${employeeData.getRole()}</h3>
-        <p>${employeeData.name}</p>
+        <p>${employeeData.getName()}</p>
         <p>${employeeData.getEmail()}</p>
         <p>${employeeData.getGithub()}</p>
       </div>` 
