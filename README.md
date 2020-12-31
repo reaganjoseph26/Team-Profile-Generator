@@ -31,6 +31,9 @@
   You would use this command line application to generate a quick profile of your employee team as well as have quick access to it. 
   </br>
   ![ScreenShot](./dist/images/terminal-example.jpg)
+  </br>
+  A walkthrough link depicting the process: https://www.youtube.com/watch?v=Ct6hzEAVkug&feature=youtu.be
+
 
   ## Credits
   N/A

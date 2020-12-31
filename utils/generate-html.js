@@ -4,7 +4,6 @@ const fs = require('fs');
 function renderEmployee(employeeData) {
     let employeeContent
 
-    console.log(employeeData)
     if (employeeData.getRole() === 'Manager') {
       employeeContent = 
       `<div class="col-lg-4 col-md-6 col-sm-12">
