@@ -7,43 +7,53 @@ function renderEmployee(employeeData) {
     console.log(employeeData)
     if (employeeData.getRole() === 'Manager') {
       employeeContent = 
-      `<div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <h3>${employeeData.getName()}</h3>
-        <h4><i class="fas fa-mug-hot"></i> ${employeeData.getRole()}</h4>
-       </div>
-       <ul class="list-group list-group-flush">
-        <li class="list-group-item border">ID: ${employeeData.getId()}</li>
-        <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
-        <li class="list-group-item border">Office Number: ${employeeData.officeNumber}</li>
-       </ul>
-      </div>` 
+      `<div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h2>${employeeData.getName()}</h2>
+            <h4><i class="fas fa-mug-hot"></i> ${employeeData.getRole()}</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border">ID: ${employeeData.getId()}</li>
+            <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
+            <li class="list-group-item border">Office Number: ${employeeData.officeNumber}</li>
+          </ul>
+        </div>
+      </div>
+      ` 
     } else if  (employeeData.getRole() === 'Engineer') {
       employeeContent = 
-      `<div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <h3>${employeeData.getName()}</h3>
-        <h4><i class="fas fa-glasses"></i> ${employeeData.getRole()}</h4>
+      `<div class="col-4">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h2>${employeeData.getName()}</h2>
+              <h4><i class="fas fa-glasses"></i> ${employeeData.getRole()}</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item border">ID: ${employeeData.getId()}</li>
+              <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
+              <li class="list-group-item border">Gitub: <a href="https://github.com/${employeeData.getGithub()}">${employeeData.getGithub()}</a></li>
+            </ul>
+          </div>
         </div>
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item border">ID: ${employeeData.getId()}</li>
-        <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
-        <li class="list-group-item border">Gitub: <a href="https://github.com/${employeeData.getGithub()}">${employeeData.getGithub()}</a></li>
-        </ul>
-      </div>` 
+      ` 
     } else if (employeeData.getRole() === 'Intern') {
       employeeContent = 
-      `<div class="card" style="width: 18rem;">
-      <div class="card-body">
-      <h3>${employeeData.getName()}</h3>
-      <h4><i class="fas fa-user-graduate"></i> ${employeeData.getRole()}</h4>
+      `
+      <div class="col-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h2>${employeeData.getName()}</h2>
+            <h4><i class="fas fa-user-graduate"></i> ${employeeData.getRole()}</h4>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border">ID: ${employeeData.getId()}</li>
+            <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
+            <li class="list-group-item border">School: ${employeeData.getSchool()}</li>
+          </ul>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-      <li class="list-group-item border">ID: ${employeeData.getId()}</li>
-      <li class="list-group-item border">Email: <a href="mailto:${employeeData.getEmail()}">${employeeData.getEmail()}</a></li>
-      <li class="list-group-item border">School: ${employeeData.getSchool()}</li>
-      </ul>
-      </div>` 
+      ` 
     }
 
     return employeeContent;
@@ -51,6 +61,16 @@ function renderEmployee(employeeData) {
 
 function generateHTML(data) {
   console.log(data)
+
+  let generatedContent = '';
+
+  data.forEach(employee => {
+    console.log(employee.getName())
+    
+    generatedContent += renderEmployee(employee);
+    
+  })
+
   let content =  `
 
   <!DOCTYPE html>
@@ -65,20 +85,19 @@ function generateHTML(data) {
     <link rel="stylesheet" href="../src/stylesheet.css">
   </head>
 
-  <h1>My Team</h1>
 
-`;
+  <header>My Team</header>
 
-  data.forEach(employee => {
-    console.log(employee.getName())
+  <main>
+    <div class="container">
+      <div class="row">
+     
+      ${generatedContent}
 
-    content += `
-    
-      ${renderEmployee(employee)}
-
-    
-    `
-  })
+      </div>
+    </div>  
+  </main>
+`
 
 writeToFile('./dist/index.html', content);
 }
