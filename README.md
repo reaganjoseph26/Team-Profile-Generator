@@ -32,6 +32,10 @@
   </br>
   ![ScreenShot](./dist/images/terminal-example.jpg)
   </br>
+  This is what the generated html file should will look like in the broswer.
+  </br>
+  ![ScreenShot](./dist/images/browser-screenshot.jpg)
+  </br>
   A walkthrough link depicting the process: https://www.youtube.com/watch?v=Ct6hzEAVkug&feature=youtu.be
 
 
