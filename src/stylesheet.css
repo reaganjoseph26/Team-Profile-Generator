@@ -9,6 +9,7 @@ header {
     color: white;
     padding: 40px;
     font-size: 30px;
+
 }
 
 ul, .list-group {
@@ -27,8 +28,8 @@ ul, .list-group {
     width: inherit;
 }
 
-.card-row {
+/* .card-row {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}
+} */

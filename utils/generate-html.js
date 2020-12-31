@@ -7,7 +7,7 @@ function renderEmployee(employeeData) {
     console.log(employeeData)
     if (employeeData.getRole() === 'Manager') {
       employeeContent = 
-      `<div class="col-4">
+      `<div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h2>${employeeData.getName()}</h2>
@@ -23,7 +23,7 @@ function renderEmployee(employeeData) {
       ` 
     } else if  (employeeData.getRole() === 'Engineer') {
       employeeContent = 
-      `<div class="col-4">
+      `<div class="col-lg-4 col-md-6 col-sm-12">
           <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h2>${employeeData.getName()}</h2>
@@ -40,7 +40,7 @@ function renderEmployee(employeeData) {
     } else if (employeeData.getRole() === 'Intern') {
       employeeContent = 
       `
-      <div class="col-4">
+      <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h2>${employeeData.getName()}</h2>
