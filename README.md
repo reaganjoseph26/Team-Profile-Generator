@@ -43,7 +43,7 @@
   Currently no credits are applicable for this project.
 
   ## Test
-  All test for this application was successfully passed. In the test folder when this repo is cloned locally to your pc, try adding anoemployee type. For instance, add a 'Associate.test.js' file to the _test_ folder. Using the jest package, write a test that creates a new instance of associate and expect that associate to be an object. Initially that test should fail which is what you want. Create a Associate.js file in the lib/ folder and make sure Associate is exported. This should now give you a passing test. You will repeat this process with every new piece of information added to the Associate.js file. For an example, look throught the other test provided in the _test_ folder.  
+  All test for this application was successfully passed. In the test folder when this repo is cloned locally to your pc, try adding anoemployee type. For instance, add a 'Associate.test.js' file to the _test_ folder. Using the jest package, write a test that creates a new instance of associate and expect that associate to be an object. Run the command 'npm run test or npm run test <filename> to have the test run. Initially that test should fail which is what you want. Create a Associate.js file in the lib/ folder and make sure Associate is exported. This should now give you a passing test. You will repeat this process with every new piece of information added to the Associate.js file. For an example, look throught the other test provided in the _test_ folder.  
 
   ## Questions
   If you have any additional questions, please reach out to me. 
